@@ -27,5 +27,3 @@ def create_lineplot(x = int ,y = int ,title_for_plot = str):
     plt.show()
 
 create_lineplot(x_achse, y_achse, 'This is a test')
-
-
