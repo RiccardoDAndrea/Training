@@ -23,6 +23,7 @@ y_achse = [6,5,4,3,2,1]
 def create_lineplot(x = int ,y = int ,title_for_plot = str):
     plt.plot(x,y)
     plt.title(title_for_plot)
+    plt.legend()
     plt.show()
 
 create_lineplot(x_achse, y_achse, 'This is a test')
