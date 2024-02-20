@@ -1,1 +1,2 @@
-# training
+# Training
+Train to code 
