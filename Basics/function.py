@@ -26,4 +26,33 @@ def create_lineplot(x = int ,y = int ,title_for_plot = str):
     plt.legend()
     plt.show()
 
-create_lineplot(x_achse, y_achse, 'This is a test')
+
+
+import requests
+import pandas as pd
+
+def get_dataset_from_github(url):
+    """This function allows you to retrieve data from GitHub repositories.
+    
+    Input:
+    - url: String from the GitHub repository for the dataset in raw data
+    
+    Output:
+    - A dataset if successful, otherwise None
+    """
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Wirft eine Ausnahme, wenn der Statuscode nicht 200 (OK) ist
+        dataset = pd.read_csv(url)
+        return dataset
+    except requests.exceptions.RequestException as e:
+        print('Fehler beim Herunterladen des Datasets:', e)
+        return None
+    
+df = get_dataset_from_github(url = 'https://raw.githubusercontent.com/jhnwr/auto-reporting/main/report1.csv')
+
+print(df)
+
+
+
+
