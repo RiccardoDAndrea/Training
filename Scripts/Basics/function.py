@@ -31,14 +31,15 @@ def create_lineplot(x = int ,y = int ,title_for_plot = str):
 import requests
 import pandas as pd
 
-def get_dataset_from_github(url):
+def get_dataset_from_github(url = str):
     """This function allows you to retrieve data from GitHub repositories.
     
     Input:
     - url: String from the GitHub repository for the dataset in raw data
     
     Output:
-    - A dataset if successful, otherwise None
+    - A dataset if successful code 200, 
+      if not sucessfull != 200 it will return the erorr message and None
     """
     try:
         response = requests.get(url)
